@@ -1,0 +1,9 @@
+version: '3'
+services:
+  db:
+    build: .
+    image: lrkwz/mssql-server-linux
+    volumes:
+    - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    ports:
+    - 1433:1433
