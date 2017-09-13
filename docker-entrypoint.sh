@@ -3,6 +3,7 @@
 env
 
 "$@" &
+SQLSERVERPID=$!
 
 sleep 20
 
@@ -15,3 +16,8 @@ for f in /docker-entrypoint-initdb.d/*; do
     esac
     echo
 done
+
+kill $SQLSERVERPID
+sleep 20
+
+"$@"
