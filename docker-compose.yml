@@ -7,3 +7,5 @@ services:
     - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
     ports:
     - 1433:1433
+    environment:
+    - MSSQL_PID=Developer
